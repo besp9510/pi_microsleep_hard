@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "*.ld": "linkerscript",
+        "config_i2c.h": "c",
+        "pi_lw_gpio.h": "c",
+        "errno.h": "c",
+        "pi_i2c.h": "c",
+        "write_conditions_to_bus.h": "c",
+        "config.h": "c",
+        "time.h": "c"
+    }
+}

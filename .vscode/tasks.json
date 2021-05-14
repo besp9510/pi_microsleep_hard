@@ -1,0 +1,14 @@
+{
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "C/C++: gcc build active file",
+            "command": "make clean"
+        },
+        {
+            "type": "shell",
+            "label": "C/C++: gcc build active file",
+            "command": "make"
+        }
+    ],
+}
