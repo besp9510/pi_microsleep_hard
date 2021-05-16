@@ -22,7 +22,7 @@ DEPEXT := d
 OBJEXT := o
 
 # Flags, Libraries and Includes:
-CFLAGS   := -Wall -O0 -g # C flags
+CFLAGS   := -Wall -O2 -g # C flags
 LDFLAGS  :=
 
 LIB     := -lpimicrosleephard -lpilwgpio

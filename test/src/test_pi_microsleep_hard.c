@@ -20,7 +20,7 @@ int main(void) {
     int gpio_pin = 4;
 
     // Choose different clock periods to toggle the GPIO pin:
-    int slow_usec = 100;
+    int slow_usec = 4;
     int fast_usec = slow_usec / 2;
 
     printf("Setting up pi_microsleep_hard\n");
@@ -81,5 +81,4 @@ int main(void) {
 
     printf("Now reached maximum toggle time; stopping\n");
     printf("Completed test_pi_microsleep_hard\n");
-
 }
