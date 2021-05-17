@@ -141,11 +141,13 @@ I choose the "brute force" polling method instead of relying on interrupt genera
 
 #### Timing statisitcs
 
-I calculated timing statistics by running the test script at 1 and 2 us delays.
+I calculated timing statistics by running the test script at 1 and 2 us delays with niceness set to -20.
 
 ![gpio](images/1us_4MHz_plot.png)
 
 ![gpio](images/2us_4MHz_plot.png)
+
+I attribute the min and maximum delays to be a function of the operating system scheduler and not the sleep function iteself.
 
 ### Functions
 
