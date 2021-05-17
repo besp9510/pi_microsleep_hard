@@ -1,5 +1,5 @@
 # Hard Microsleep Library Via System Timer for the Raspberry Pi
-pi_microsleep_hard.c provides a hard microsleep function for the Raspberry Pi via the system timer peripheral. microsleep_hard() offer delays down to 1 microsecond with precision of TBD microseconds. This software requires no dependencies other than Raspbian running on any version of the Raspberry Pi.
+pi_microsleep_hard.c provides a hard microsleep function for the Raspberry Pi via the system timer peripheral. microsleep_hard() offer delays down to 1 microsecond with typical precision of 1 microsecond or better (see [Timing statisitcs](Timing statisitcs)). This software requires no dependencies other than Raspbian running on any version of the Raspberry Pi.
 
 This project is meant to provides a hard sleep function for projects that require a software-defined delay ranging from 1 to 100 microseconds. The standard delay call nanosleep(), despite allowing you to define very precise sleep durations, will typically sleep longer than desired (on the order of 10s to 100 or more microseconds) due to operating system overhead. It is a system call after all. microsleep_hard() is mean to fill in this gap by offering callers a very precise delay function for those times when even 1 microsecond matters.
 
