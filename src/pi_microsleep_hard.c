@@ -84,16 +84,16 @@ int setup_microsleep_hard(void) {
 int microsleep_hard(unsigned int usec) {
     uint32_t timout;
 
-    // Error out if microsleep_hard has not been setup yet; can't access
-    // registers if physical memory has yet to be mapped into the virtual
-    // space:
+    // Setup microsleep if it hasn't already been explicitly set up for us.
+    // Memory mapping is required for this to work so register mapping
+    // has to be done sometime.
     if (!(config_flag)) {
-        return -ENOTSETUP;
+        setup_microsleep_hard();
     }
 
     // My perferred method of using the system timer is to compare against
     // the free running timer directly instead of relying upon interrupts.
-    // This method is guarenteed to work all the way down to 1 us delays.
+    // This method is guaranteed to work all the way down to 1 us delays.
     // See the comment block below on how to implement the intended interrupt
     // driven approach and some of the limitations I found.
 
@@ -113,10 +113,10 @@ int microsleep_hard(unsigned int usec) {
     // ourselves. I would guess this is a limitation of Linux scheduler and
     // it interrupt sharing. 
     if (usec < 13) {
-        // This will get a time out time 
+        // Add to current value of the timer to find what our timeout time will be
         timout = sys_timer_reg->clo + usec;
 
-        // Spin while we wait for the timer:
+        // Spin while we wait for the timer to tick:
         while (sys_timer_reg->clo < timout);
     } else {
         // This will clear the interrupt pending bit for C3 specifically:
