@@ -53,6 +53,8 @@ Then install files to the installation directory. You must run the following eit
 $ sudo make install
 ```
 
+To use pi_microsleep_hard.c in your project, simply use the header file `pi_microsleep_hard.h` and link to the shared library `-lpimicrosleephard`.
+
 #### Uninstall
 At anytime, to uninstall pi_microsleep_hard.c, use the same Makefile used for compiling or a Makefile generated using the configuration script with the same options as root or with root privileges.
 
