@@ -162,7 +162,6 @@ int setup_microsleep_hard(void);
 Error numbers:
 * `ENOPIVER` : Could not get Pi board revision.
 * `MAP_FAILED` : Memory map failed (most likely due to permissions)
-* `ESETUP` : pi_microsleep_hard has already been setup
 
 #### Microsleep Hard
 Sleep for a desired amount of time in microseconds.

@@ -37,10 +37,10 @@ int setup_microsleep_hard(void) {
     int bcm_peri_base_phys_addr;
     int sys_timer_phys_addr;
 
-    // Error out if microsleep_hard has already been setup. We cannot remap
+    // Fail silently if microsleep_hard has already been setup. We cannot remap
     // registers into virtual memory again!
     if (config_flag) {
-        return -ESETUP;
+        return 0;
     }
 
     // Get PI version by parsing /proc/cpu_info:
